@@ -45,11 +45,9 @@ You need to install [MongoDB](https://docs.mongodb.com/manual/administration/ins
 
 | Method   | Resource                  | Description                                                                                                                       |
 | :------- | :--------------           | :------------------------------------------------------------------------------------------------------------------------------------------ |
-| `POST`   | `/api/users/register`     | Create a new user in the DB. You need to specify in the body the following attributes: firstname, lastname, email & password. 
-                     |
+| `POST`   | `/api/users/register`     | Create a new user in the DB. You need to specify in the body the following attributes: firstname, lastname, email & password.                                                                               |
 | `POST`   | `/api/users/login`        | Sign in with the email & password. If it's successful, it then generates a token                                         |
-| `GET`    | `/api/posts`              | Returns the posts
-                     |     
+| `GET`    | `/api/posts`              | Returns the posts                                      |     
 
 ### Available scripts
 
