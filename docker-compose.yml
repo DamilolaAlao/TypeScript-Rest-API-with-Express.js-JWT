@@ -6,3 +6,12 @@ services:
     build: .
     ports:
       - '3658:3658'
+    environment:
+     - DB_URL=mongodb://mongo:27017/auth
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"

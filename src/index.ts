@@ -15,7 +15,10 @@ mongoose.connect(
   {
     useNewUrlParser: true
   },
-  () => {
+  (error) => {
+    if(error){
+      return console.log("could not connect to db");
+    }
     console.log("connected to db");
   }
 );
