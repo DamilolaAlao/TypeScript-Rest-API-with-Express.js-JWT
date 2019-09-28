@@ -53,4 +53,5 @@ You need to install [MongoDB](https://docs.mongodb.com/manual/administration/ins
 
 - `dev` - To run the app without transpile,
 - `start` - Build & run the transpiled app
-[![Try in PWD](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://github.com/DamilolaAlao/TypeScript-Rest-API-with-Express.js-JWT/blob/master/docker-compose.yml)
+
+[![Try in PWD](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/DamilolaAlao/TypeScript-Rest-API-with-Express.js-JWT/master/docker-compose.yml)
