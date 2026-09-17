@@ -5,7 +5,7 @@ const User = require("../model/User");
 const { registerValidation } = require("../middleware/validation");
 
 //Register
-module.exports = async function login(req: Request, res: Response) {
+module.exports = async function register(req: Request, res: Response) {
   //Validate the Data
   const { error } = registerValidation(req.body);
   if (error) return res.status(400).send(error.details[0].message);
@@ -27,8 +27,8 @@ module.exports = async function login(req: Request, res: Response) {
 
   try {
     const savedUser = await user.save();
-    res.send({ user: user._id });
+    res.status(201).send({ user: savedUser._id });
   } catch (error) {
-    res.status(400).send(error);
+    res.status(400).send("Registration failed");
   }
 };

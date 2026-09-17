@@ -6,4 +6,4 @@ const router = Router();
 //Post
 router.get("/", auth, posts);
 
-module.exports = router;
+export default router;

@@ -13,35 +13,21 @@ interface logindata {
 }
 
 const registerValidation = (data: registerdata) => {
-  const schema = {
-    firstname: Joi.string()
-      .min(6)
-      .required(),
-    lastname: Joi.string()
-      .min(6)
-      .required(),
-    email: Joi.string()
-      .min(6)
-      .required()
-      .email(),
-    password: Joi.string()
-      .min(6)
-      .required()
-  };
-  return Joi.validate(data, schema);
+  const schema = Joi.object({
+    firstname: Joi.string().min(4).max(255).required(),
+    lastname: Joi.string().min(4).max(255).required(),
+    email: Joi.string().min(6).max(255).required().email(),
+    password: Joi.string().min(6).max(1024).required()
+  });
+  return schema.validate(data);
 };
 
 const loginValidation = (data: logindata) => {
-  const schema = {
-    email: Joi.string()
-      .min(6)
-      .required()
-      .email(),
-    password: Joi.string()
-      .min(6)
-      .required()
-  };
-  return Joi.validate(data, schema);
+  const schema = Joi.object({
+    email: Joi.string().min(6).max(255).required().email(),
+    password: Joi.string().min(6).max(1024).required()
+  });
+  return schema.validate(data);
 };
 
 module.exports.registerValidation = registerValidation;

@@ -18,6 +18,10 @@ module.exports = async function login(req: Request, res: Response) {
   if (!validPass) return res.status(400).send("Email or Password is wrong");
   //Create and Assign a token
   const secret = process.env.TOKEN_SECRET || "thisisatestsecret";
-  const token = jwt.sign({ _id: user._id }, secret);
+  const token = jwt.sign(
+    { _id: user._id },
+    secret,
+    { expiresIn: process.env.TOKEN_EXPIRES_IN || "1h" }
+  );
   res.header("auth-token", token).send(token);
 };
